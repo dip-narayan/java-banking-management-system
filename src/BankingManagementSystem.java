@@ -57,8 +57,7 @@ public class BankingManagementSystem {
 
                     case 2:
 
-                        System.out.println();
-                        System.out.println("Current Balance: " + balance);
+                        displayBalance(balance);
 
                         break;
 
@@ -139,6 +138,10 @@ public class BankingManagementSystem {
         System.out.println("4. Withdraw Money");
         System.out.println("5. Logout");
         System.out.println("================================");
+    }
+    private static void displayBalance(double balanceToDisplay) {
+        System.out.println();
+        System.out.println("Current Balance: " + balanceToDisplay);
     }
 
 }
