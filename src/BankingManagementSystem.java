@@ -38,15 +38,7 @@ public class BankingManagementSystem {
             while (login) {
 
                 System.out.println();
-                System.out.println("================================");
-                System.out.println("          BANKING MENU");
-                System.out.println("================================");
-                System.out.println("1. Account Details");
-                System.out.println("2. Check Balance");
-                System.out.println("3. Deposit Money");
-                System.out.println("4. Withdraw Money");
-                System.out.println("5. Logout");
-                System.out.println("================================");
+                displayMenu();
 
                 System.out.print("Enter your choice: ");
                 choice = scanner.nextInt();
@@ -137,4 +129,16 @@ public class BankingManagementSystem {
 
         scanner.close();
     }
+    private static void displayMenu() {
+        System.out.println("================================");
+        System.out.println("          BANKING MENU");
+        System.out.println("================================");
+        System.out.println("1. Account Details");
+        System.out.println("2. Check Balance");
+        System.out.println("3. Deposit Money");
+        System.out.println("4. Withdraw Money");
+        System.out.println("5. Logout");
+        System.out.println("================================");
+    }
+
 }
