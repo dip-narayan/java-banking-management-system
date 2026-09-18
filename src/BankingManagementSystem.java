@@ -47,11 +47,7 @@ public class BankingManagementSystem {
 
                     case 1:
 
-                        System.out.println();
-                        System.out.println("====== ACCOUNT DETAILS ======");
-                        System.out.println("Account Number : " + accountNumber);
-                        System.out.println("Name           : " + name);
-                        System.out.println("Balance        : " + balance);
+                        displayAccountDetails(accountNumber, name, balance);
 
                         break;
 
@@ -68,7 +64,7 @@ public class BankingManagementSystem {
 
                         if (deposit > 0) {
 
-                            balance = balance + deposit;
+                            balance = calculateBalanceAfterDeposit(balance, deposit);
 
                             System.out.println("Deposit Successful!");
                             System.out.println("New Balance: " + balance);
@@ -88,9 +84,8 @@ public class BankingManagementSystem {
 
                         if (withdraw > 0 && withdraw <= balance) {
 
-                            balance = balance - withdraw;
-
-                            System.out.println("Withdrawal Successful!");
+                            balance = calculateBalanceAfterWithdraw(balance, withdraw);
+                            System.out.println("Withdrawn Successful!");
                             System.out.println("New Balance: " + balance);
 
                         } else {
@@ -139,9 +134,26 @@ public class BankingManagementSystem {
         System.out.println("5. Logout");
         System.out.println("================================");
     }
+    private static void displayAccountDetails(String accountNumber, String name, double balance) {
+        System.out.println();
+        System.out.println("====== ACCOUNT DETAILS ======");
+        System.out.println("Account Number : " + accountNumber);
+        System.out.println("Name           : " + name);
+        System.out.println("Balance        : " + balance);
+    }
     private static void displayBalance(double balanceToDisplay) {
         System.out.println();
         System.out.println("Current Balance: " + balanceToDisplay);
+    }
+    private static double calculateBalanceAfterDeposit(double currentBalance, double depositAmount) {
+        currentBalance = currentBalance + depositAmount;
+
+        return currentBalance;
+    }
+    private static double calculateBalanceAfterWithdraw(double currentBalance, double withdrawnAmount) {
+        currentBalance = currentBalance - withdrawnAmount;
+
+        return currentBalance;
     }
 
 }
